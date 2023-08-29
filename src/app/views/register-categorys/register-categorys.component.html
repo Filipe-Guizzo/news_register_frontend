@@ -1,0 +1,13 @@
+<app-form-box [title]="'Register category'" [backButton]="true" [route]="'/home'">
+    <form>
+        <div>
+            <app-input [type]="'text'" [id]="'category'" [name]="'category'" [label]="'Category'" (changeEvent)="onChangeForm($event)"></app-input>
+            <div class="badges">
+                <app-badge *ngFor="let category of categorys">{{category.name}}</app-badge>
+            </div>
+            <app-button [type]="'success'" [label]="'To register'" (onClickEvent)="onRegister()"></app-button>
+        </div>
+    </form>
+</app-form-box>
+<app-spinner-loader [show]="spinner"></app-spinner-loader>
+<app-alert [type]="alert.type" [show]="alert.show" (hide)="onCloseAlert($event)">{{alert.message}}</app-alert>

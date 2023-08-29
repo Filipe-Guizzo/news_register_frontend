@@ -1,0 +1,30 @@
+.form-group{
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.input-label{
+    color: var(--light);
+    margin: 10px;
+}
+
+.input-icon{
+    color: var(--light);
+    font-size: 40pt;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.input-icon:hover{
+    color: var(--primary);
+}
+
+.input-file{
+    display: none;
+}

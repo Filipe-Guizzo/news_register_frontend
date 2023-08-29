@@ -1,0 +1,9 @@
+<div class="form-group">
+    <label class="input-label">Select a image</label>
+    <label [for]="id" class="input-icon">
+        <i class="bi bi-image"></i>
+    </label>
+    <p *ngIf="value != undefined">{{onGetName(value!.name!)}}</p>
+    <p *ngIf="value == undefined">default</p>
+    <input type="file" [name]="name" [id]="id" class="input-file" (change)="onChange($event)"/>
+</div>

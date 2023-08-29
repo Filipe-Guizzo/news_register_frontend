@@ -1,0 +1,16 @@
+<app-form-box [title]="'Register News'" [backButton]="true" [route]="'/home'">
+    <form>
+        <div>
+            <app-input [type]="'text'" [id]="'title'" [name]="'title'" [label]="'Title'" (changeEvent)="onChangeForm($event)"></app-input>
+            <app-input [type]="'text'" [id]="'subtitle'" [name]="'subtitle'" [label]="'Subtitle'" (changeEvent)="onChangeForm($event)"></app-input>
+            <app-input [type]="'text'" [id]="'content'" [name]="'content'" [label]="'Content'" (changeEvent)="onChangeForm($event)"></app-input>
+            <app-input-select [name]="'categorys'" [id]="'categorys'" [label]="'Category'" (changeEvent)="onChangeForm($event)"  [value]="{id: 0, name: 'Select a value'}" >
+                <option *ngFor="let category of categorys" [value]="category.id"> {{ category.name }}</option>
+            </app-input-select>
+            <app-input-file [id]="'photo'" [name]="'photo'" (onChangeEvent)="onChangeForm($event)"></app-input-file>
+            <app-button [type]="'success'" [label]="'To register'" (onClickEvent)="onRegister()"></app-button>
+        </div>
+    </form>
+</app-form-box>
+<app-spinner-loader [show]="spinner"></app-spinner-loader>
+<app-alert [type]="alert.type" [show]="alert.show" (hide)="onCloseAlert($event)">{{alert.message}}</app-alert>

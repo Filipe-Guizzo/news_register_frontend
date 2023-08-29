@@ -1,0 +1,10 @@
+<div class="alert-box" [ngClass]="this.show? 'show' : 'hide'">
+    <div class="alert" [ngClass]="type">
+        <p>
+            <ng-content></ng-content>
+        </p>
+        <button class="btn-close" (click)="onClose()">
+            <i class="bi bi-x-circle-fill"></i>
+        </button>
+    </div>
+</div>

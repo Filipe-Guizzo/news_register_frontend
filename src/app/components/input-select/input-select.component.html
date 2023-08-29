@@ -1,0 +1,7 @@
+<div class="form-group">
+    <label class="input-label">{{ label }}</label>
+    <select [name]="name" [id]="id" class="form-input" (change)="onChange($event)">
+        <option [value]="value.id" selected disabled>{{value.name}}</option>
+        <ng-content select="option"></ng-content>
+    </select>
+</div>

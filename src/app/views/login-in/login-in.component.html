@@ -1,0 +1,11 @@
+<app-form-box [title]="'Login-in'" [activeLinks]="{forgotPassword: true, dontHaveAccount: true, haveAccount: false}">
+    <form>
+        <div>
+            <app-input [type]="'email'" [id]="'email'" [name]="'email'" [label]="'E-mail'" (changeEvent)="onChangeForm($event)"></app-input>
+            <app-input [type]="'password'" [id]="'password'" [name]="'password'" [label]="'Password'" [setVisible]="true" (changeEvent)="onChangeForm($event)"></app-input>
+            <app-button [type]="'default'" [label]="'To enter'" (onClickEvent)="onLogin()"></app-button>
+        </div>
+    </form>
+</app-form-box>
+<app-spinner-loader [show]="spinner"></app-spinner-loader>
+<app-alert [type]="alert.type" [show]="alert.show" (hide)="onCloseAlert($event)">{{alert.message}}</app-alert>

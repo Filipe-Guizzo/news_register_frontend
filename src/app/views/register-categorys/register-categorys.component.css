@@ -1,0 +1,14 @@
+.badges{
+    width: 100%;
+    height: 100px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+    flex-wrap: wrap;
+}
+
+.badges::-webkit-scrollbar {
+    display: none;
+}

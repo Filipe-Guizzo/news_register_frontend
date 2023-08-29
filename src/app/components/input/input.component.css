@@ -1,0 +1,70 @@
+.form-group{
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    position: relative;
+}
+
+.form-input{
+    text-align: center;
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-bottom: 3px solid var(--light);
+    background-color: transparent;
+    outline: none;
+    transition: 0.5s;
+}
+
+.input-label{
+    position: absolute;
+    transition: 0.5s;
+    top: 20px;
+    color: var(--light);
+}
+
+.form-input:focus{
+    background-color: var(--transparent);
+}
+
+.form-input:not(:placeholder-shown){
+    background-color: var(--transparent);
+}
+
+.form-input:focus + .input-label{
+    top: -20px;
+}
+
+.form-input:not(:placeholder-shown) + .input-label{
+    top: -20px;
+}
+
+.form-input:not(:valid) + .input-label{
+    top: -20px;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+.show-password{
+    position: absolute;
+    right: 0;
+    font-size: 15pt;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.show-password:hover{
+    color: var(--light);
+}
+
+@media screen  and (max-width: 1000px) {
+    .form-group{
+        margin: 50px;
+    }
+    
+}

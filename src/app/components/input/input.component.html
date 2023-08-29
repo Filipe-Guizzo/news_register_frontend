@@ -1,0 +1,7 @@
+<div class="form-group">
+    <input [type]="type" [id]="id" [name]="name" class="form-input" placeholder="" [value]="value" (change)="onChange($event)" (keypress)="onSetMask($event)" [maxLength]="maxLength">
+    <label [for]="id" class="input-label">{{label}}</label>
+    <label [for]="'show-password'+name" class="show-password" *ngIf="setVisible && type=='password'"><i class="bi bi-eye-slash"></i></label>
+    <label [for]="'show-password'+name" class="show-password" *ngIf="setVisible && type=='text'"><i class="bi bi-eye"></i></label>
+    <input type="checkbox" [name]="'show-password'+name" [id]="'show-password'+name" *ngIf="setVisible" (click)="onSetPasswordVisible()">
+</div>

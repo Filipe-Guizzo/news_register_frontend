@@ -1,0 +1,17 @@
+
+<main class="content">
+    <div class="form-box">
+        <header class="form-header">
+            <app-back-button [route]="route" *ngIf="backButton"></app-back-button>
+            <h1>{{title}}</h1>
+        </header>
+        <main class="form-content">
+            <ng-content select="form"></ng-content>
+        </main>
+        <footer class="form-footer">
+            <a href="#" routerLink="/forgot-password" *ngIf="activeLinks.forgotPassword">Forgot password?</a>
+            <a href="#" routerLink="/register-in" *ngIf="activeLinks.dontHaveAccount">Don't have an account?</a>
+            <a href="#" routerLink="/login" *ngIf="activeLinks.haveAccount">Do have an account?</a>
+        </footer>
+    </div>
+</main>

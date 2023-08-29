@@ -1,0 +1,17 @@
+<app-form-box [title]="'Register-in'"
+    [activeLinks]="{forgotPassword: false, dontHaveAccount: false, haveAccount: true}" [backButton]="true" [route]="'/login'">
+    <form>
+        <div>
+            <app-input [type]="'text'" [id]="'name'" [name]="'name'" [label]="'Name'" (changeEvent)="onChangeForm($event)"></app-input>
+            <app-input [type]="'date'" [id]="'date-born'" [name]="'date-born'" [label]="'Date born'" [mask]="true" [maskType]="'date'" (changeEvent)="onChangeForm($event)"></app-input>
+            <app-input-radio [id]="'sex'" [name]="'sex'" [label]="'Sex'" [radios]="[{label:'Male', value:'M'}, {label:'Female', value:'F'}]" (changeEvent)="onChangeForm($event)"></app-input-radio>
+            <app-input [type]="'email'" [id]="'email'" [name]="'email'" [label]="'E-mail'" (changeEvent)="onChangeForm($event)"></app-input>
+            <app-input [type]="'password'" [id]="'password'" [name]="'password'" [label]="'Password'" [setVisible]="true" (changeEvent)="onChangeForm($event)"></app-input>
+            <app-input [type]="'password'" [id]="'password-again'" [name]="'password-again'" [label]="'Password again'" [setVisible]="true" (changeEvent)="onChangeForm($event)"></app-input>
+            <app-input-file [id]="'photo'" [name]="'photo'" (onChangeEvent)="onChangeForm($event)"></app-input-file>
+            <app-button [type]="'success'" [label]="'To register'" (onClickEvent)="onRegister()"></app-button>
+        </div>
+    </form>
+</app-form-box>
+<app-spinner-loader [show]="spinner"></app-spinner-loader>
+<app-alert [type]="alert.type" [show]="alert.show" (hide)="onCloseAlert($event)">{{alert.message}}</app-alert>

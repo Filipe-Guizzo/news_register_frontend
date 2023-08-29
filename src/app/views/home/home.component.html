@@ -1,0 +1,7 @@
+<header>
+    <app-input-search (changeEvent)="onSearch($event)"></app-input-search>
+</header>
+<main class="content">
+    <app-card *ngFor="let card of news" [news]="card"></app-card>
+</main>
+<app-spinner-loader [show]="spinner"></app-spinner-loader>

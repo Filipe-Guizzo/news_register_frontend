@@ -1,0 +1,3 @@
+<div class="form-group">
+    <input *ngFor="let code of codes" type="text" [name]="'code-'+code" [id]="'code-'+code" class="input-code" maxlength="1" pattern="{1-9}" (change)="onChange($event)">
+</div>

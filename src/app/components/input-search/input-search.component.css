@@ -1,0 +1,44 @@
+.form-group{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+.input-search{
+    width: 50vw;
+    height: 50px;
+    border-radius: 20px;
+    border: 5px solid var(--primary);
+    text-align: center;
+    outline: none;
+    transition: 0.5s;
+    color: var(--light);
+}
+.input-label{
+    position: absolute;
+    top: 15px;
+    font-size: 16pt;
+    transition: 0.5s;
+}
+
+.input-search:focus{
+    background-color: var(--secondary);
+}
+
+.input-search:not(:placeholder-shown){
+    background-color: var(--gray);
+}
+
+.input-search:focus + .input-label{
+    top: -30px;
+}
+
+.input-search:not(:placeholder-shown) + .input-label{
+    top: -30px;
+}
+
+@media screen and (max-width: 500px) {
+    .input-search{
+        width: 70vw;
+    }
+}

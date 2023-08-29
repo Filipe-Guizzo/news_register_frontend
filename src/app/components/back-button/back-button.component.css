@@ -1,0 +1,21 @@
+button{
+    position: absolute;
+    left: -20px;
+    font-size: 25pt;
+    background-color: transparent;
+    color: var(--primary);
+    border: none;
+    outline: hidden;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+button:hover{
+    color: var(--light);
+}
+
+@media screen and (max-width: 1000px) {
+    button{
+        display: none;
+    }
+}

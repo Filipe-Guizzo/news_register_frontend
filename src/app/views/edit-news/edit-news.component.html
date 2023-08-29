@@ -1,0 +1,18 @@
+<app-form-box [title]="'Edit News'" [backButton]="true" [route]="'/home'">
+    <form>
+        <div>
+            <app-input [type]="'text'" [id]="'title'" [name]="'title'" [label]="'Title'" [value]="news?.title" (changeEvent)="onChangeForm($event)"></app-input>
+            <app-input [type]="'text'" [id]="'subtitle'" [name]="'subtitle'" [label]="'Subtitle'" [value]="news?.subtitle" (changeEvent)="onChangeForm($event)"></app-input>
+            <app-input [type]="'text'" [id]="'content'" [name]="'content'" [label]="'Content'" [value]="news?.content" (changeEvent)="onChangeForm($event)"></app-input>
+            <app-input-select [name]="'categorys'" [id]="'categorys'" [label]="'Category'" (changeEvent)="onChangeForm($event)" [value]="{id: news?.category?.id, name: news?.category?.name}">
+                <option *ngFor="let category of categorys" [value]="category?.id"> {{ category?.name }}</option>
+            </app-input-select>
+            <app-input-file [id]="'photo'" [name]="'photo'" [value]="photo" (onChangeEvent)="onChangeForm($event)"></app-input-file>
+            <app-button [type]="'warning'" [label]="'To update'" (onClickEvent)="onUpdate()"></app-button>
+            <app-button [type]="'danger'" [label]="'To delete'" (onClickEvent)="onOpenDialog()"></app-button>
+        </div>
+    </form>
+</app-form-box>
+<app-alert [type]="alert.type" [show]="alert.show" (hide)="onCloseAlert($event)">{{ alert.message }}</app-alert>
+<app-spinner-loader [show]="spinner"></app-spinner-loader>
+<app-dialog [title]="dialog.title" [message]="dialog.message" [buttons]="dialog.buttons" [show]="dialog.show" (onCancelEvent)="onCancel()" (onConfirmEvent)="onConfirm()"></app-dialog>

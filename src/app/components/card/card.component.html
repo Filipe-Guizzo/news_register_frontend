@@ -1,0 +1,19 @@
+<div class="card" [routerLink]="'/edit-news/' + news?.id" >
+    <header class="card-header">
+        <img class="photo" [src]="url + news?.photo" alt="photo">
+        <h1>{{ news?.title }}</h1>
+        <h3>{{ news?.subtitle }}</h3>
+        <h3>{{ news?.category?.name }}</h3>
+    </header>
+    <main class="card-content">
+        <p>{{ news?.content }}</p>
+    </main>
+    <footer class="card-footer">
+        <p>
+            <i>
+                By {{ news?.person?.name }}
+            </i>
+        </p>
+        <p>{{ news?.dt_update }}</p>
+    </footer>
+</div>

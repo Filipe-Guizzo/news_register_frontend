@@ -1,0 +1,217 @@
+header{
+    position: fixed;
+    width: 100%;
+    height: 150px;
+    padding: 20px;
+    background-color: var(--light);  
+    border-radius: 0% 0% 30px 30px;
+    box-shadow: 5px 5px 10px var(--gray);
+    border-bottom: 2px solid var(--primary);
+    z-index: 1;
+}
+
+header::before{
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    background-image: var(--gradient-primary);
+    top: 0px;
+    left: 0px;
+    clip-path: polygon(50% 0, 0 0, 0 100%, 100% 100%);
+    border-radius: 0% 0% 0px 30px;
+    z-index: 0;
+}
+
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.nav-brand h1{
+    font-size: 20pt;
+    padding: 50px;
+    color: var(--light);
+}
+
+.nav-brand img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid var(--primary);
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.nav-brand a{
+    margin: 10px;
+    font-size: 16pt;
+    color: var(--light);
+}
+
+.nav-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-item{
+    margin: 10px;
+}
+
+.nav-link{
+    padding: 20px;
+    color: var(--dark);
+    transition: 0.5s;
+}
+
+.nav-link:hover{
+    color: var(--primary);
+    border-bottom: 5px solid var(--primary);
+}
+
+#mobile-button{
+    display: none;
+}
+
+.mobile-button{
+    display: none;
+    position: relative;
+    padding: 20px;
+    width: 100px;
+    height: 100px;
+}
+
+.mobile-button > span{
+    display: block;
+    background-color: var(--primary);
+    width: 50px;
+    height: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+#mobile-button:checked + .mobile-button > span:nth-child(1){
+    position: absolute; 
+    transform: rotate(40deg);
+}
+
+#mobile-button:checked + .mobile-button > span:nth-child(2){
+    position: absolute; 
+    transform: rotate(140deg);
+    background-color: var(--light);
+    border: 3px solid var(--primary);
+}
+
+#mobile-button:checked + .mobile-button > span:nth-child(3){
+    position: absolute; 
+    transform: rotate(320deg);
+    background-color: var(--light);
+    border: 3px solid var(--primary);
+}
+
+@media screen and (max-width: 1000px){
+    header::before{
+        content: "";
+        position: absolute;
+        width: 90%;
+        clip-path: polygon(50% 0, 0 0, 0 100%, 100% 100%);
+    }
+
+    .mobile-button{
+        display: block;
+    }
+
+    .nav-links{
+        position: fixed;
+        top: 150px;
+        width: 95%;
+        height: 0px;
+        background-image: var(--gradient-primary);
+        border-radius: 20px;
+        transition: 0.5s;
+        overflow: scroll;
+    }
+
+    .nav-list{
+        flex-direction: column;
+    }
+
+    .nav-item{
+        margin: 30px;
+    }
+
+    .nav-link{
+        padding: 20px;
+        color: var(--light);
+        transition: 0.5s;
+    }
+    
+    .nav-link:hover{
+        color: var(--light);
+        border-bottom: 5px solid var(--light);
+    }
+
+    #mobile-button:checked ~ .nav-links{
+        height: 45vh;
+    }
+
+}
+
+@media screen and (max-width: 500px){
+    header::before{
+        content: "";
+        position: absolute;
+        width: 80%;
+        clip-path: polygon(50% 0, 0 0, 0 100%, 100% 100%);
+    }
+
+    .mobile-button{
+        display: block;
+    }
+
+    .nav-links{
+        position: fixed;
+        top: 150px;
+        width: 90%;
+        height: 0px;
+        background-image: var(--gradient-primary);
+        border-radius: 20px;
+        transition: 0.5s;
+        overflow: scroll;
+    }
+
+    .nav-list{
+        flex-direction: column;
+    }
+
+    .nav-item{
+        margin: 30px;
+    }
+
+    .nav-link{
+        padding: 20px;
+        color: var(--light);
+        transition: 0.5s;
+    }
+    
+    .nav-link:hover{
+        color: var(--light);
+        border-bottom: 5px solid var(--light);
+    }
+
+    #mobile-button:checked ~ .nav-links{
+        height: 35vh;
+    }
+
+}

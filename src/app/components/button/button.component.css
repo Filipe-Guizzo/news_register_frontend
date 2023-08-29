@@ -1,0 +1,85 @@
+.form-group{
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    position: relative;
+}
+
+.btn{
+    position: relative;
+    text-align: center;
+    width: 300px;
+    height: 40px;
+    outline: none;
+    transition: 0.5s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.btn::before{
+    content: "";
+    position: absolute;
+    background-color: var(--transparent);
+    width: 10px;
+    height: 10px;
+    transition: 2s;
+    border-radius: 50%;
+    visibility: hidden;
+    opacity: 50%;
+}
+
+.btn:hover::before{
+    width: 500px;
+    height: 500px;
+    visibility: visible;
+}
+
+.btn:focus::before{
+    width: 500px;
+    height: 500px;
+    visibility: visible;
+}
+
+.default{
+    color: var(--light);
+    border: 3px solid var(--light);
+}
+
+.default:focus{
+    color: var(--light);
+}
+
+.success{
+    color: var(--green-light);
+    border: 3px solid var(--green-light);
+}
+
+.success:focus{
+    color: var(--green-light);
+}
+
+.danger{
+    color: var(--red-light);
+    border: 3px solid var(--red-light);
+}
+
+.danger:focus{
+    color: var(--red-light);
+}
+
+.warning{
+    color: var(--orange-light);
+    border: 3px solid var(--orange-light);
+}
+
+.warning:focus{
+    color: var(--orange-light);
+}

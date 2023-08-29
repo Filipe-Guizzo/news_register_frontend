@@ -1,0 +1,15 @@
+<div class="dialog-box" [ngClass]="this.show? 'show' : 'hide'">
+    <div class="dialog">
+        <header>
+            <h1>{{ title }}</h1>
+        </header>
+        <main>
+            <p>{{ message }}</p>
+        </main>
+        <footer>
+            <app-button [type]="'default'" [label]="'Continue'" (onClickEvent)="onContinue()" *ngIf="buttons.continue"></app-button>
+            <app-button [type]="'success'" [label]="'Confirm'" (onClickEvent)="onConfirm()" *ngIf="buttons.confirm"></app-button>
+            <app-button [type]="'danger'" [label]="'Cancel'" (onClickEvent)="onCancel()" *ngIf="buttons.cancel"></app-button>
+        </footer>
+    </div>
+</div>

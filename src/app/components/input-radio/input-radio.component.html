@@ -1,0 +1,10 @@
+
+<div class="form-group">
+    <label>{{label}}</label>
+    <div class="radio-group">
+        <label *ngFor="let radio of radios">
+            {{radio.label}}
+            <input type="radio" [name]="name" [id]="id" [value]="radio.value" [checked]="radio.value == value? true:false" class="input-radio" (change)="onChange($event)">
+        </label>
+    </div>
+</div>
