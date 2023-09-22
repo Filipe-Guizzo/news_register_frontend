@@ -1,4 +1,3 @@
-import { Router } from '@angular/router';
 import { PersonService } from './../../services/person/person.service';
 import { Component, OnInit } from '@angular/core';
 import { Alert } from 'src/app/components/alert/interfaces/alert';
