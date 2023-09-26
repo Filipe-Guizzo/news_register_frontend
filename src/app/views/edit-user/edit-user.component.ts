@@ -16,7 +16,7 @@ export class EditUserComponent implements OnInit {
   spinner: boolean = false;
   id?: number;
   person: any;
-  form: any;
+  form: any = {name: '', date_born: '', sex: '', email: '', password: '', password_again: ''};
   photo?: File;
 
   constructor(

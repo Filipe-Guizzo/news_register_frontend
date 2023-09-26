@@ -16,7 +16,7 @@ export class UserService {
 
   constructor(
     private http: HttpClient,
-    ) { 
+    ) {
   }
 
   getAuthenticated(): boolean{
@@ -51,10 +51,10 @@ export class UserService {
     const person = localStorage.getItem('person');
     return {token: token, person: Number(person)};
   }
-  
+
   clearAuth():void{
     localStorage.clear();
-  } 
+  }
 
   getPerson(): Observable<Person | ErrorMessage>{
     const auth = this.getAuth();

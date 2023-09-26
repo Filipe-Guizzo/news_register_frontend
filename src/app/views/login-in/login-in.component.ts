@@ -42,10 +42,10 @@ export class LoginInComponent {
           break;
     }
   }
-  
+
   async onLogin(){
     this.spinner = true;
-  
+
     if(
       this.form.email == '' ||
       this.form.password == ''
@@ -60,6 +60,7 @@ export class LoginInComponent {
         }else{
           this.userService.setAuth(user);
           this.auth.setAuthenticated(true);
+          this.auth.setUser(await this.userService.getUser());
           this.alert = {show:true, message: user.content, type: 'sucess'};
           this.spinner = false;
           this.router.navigate(['/home']);
